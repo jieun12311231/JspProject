@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 순서에 맞게 적어줘야함 -->
+	<properties resource="config/db.properties" />
+	<!-- NULL은 대문자로 적어야함 -->
+	<!-- properties를 불러오기때문에 굳이 값을 하나하나 적어주지않아도 됨 -->
+	<settings>
+		<setting name="mapUnderscoreToCamelCase" value="true" />
+		<setting name="jdbcTypeForNull" value="NULL" />
+	</settings>
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}" />
+				<property name="url" value="${url}" />
+				<property name="username" value="${user}" />
+				<property name="password" value="${password}" />
+			</dataSource>
+		</environment>
+	</environments>
+	<!-- 베이스패키지만 적어주면 아래 매퍼들을 돌면서 찾아옴 -->
+	<mappers>
+		<package name="co.micol.prj" />
+	</mappers>
+</configuration>
