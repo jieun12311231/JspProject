@@ -1,0 +1,5 @@
+URL :   jdbc:oracle:thin:@localhost:1521:xe 
+  : 가장 기본적으로 오라클에 접속하는 경로
+  : 접속하고싶은 사람의 ip주소를 localhost로 적어주면됨 
+
+Driver  : oracle.jdbc.driver.OracleDriver
